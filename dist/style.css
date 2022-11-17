@@ -112,7 +112,7 @@ header #close-menu {
 }
 
 nav {
-  display: none;
+  transform: translateX(100%);
   position: absolute;
   right: 0;
   top: 0;
@@ -148,10 +148,11 @@ nav ul a:hover {
 }
 @media (min-width: 48.75em) {
   nav {
-    display: block;
+    transform: translateX(0);
     position: unset;
     height: unset;
     width: unset;
+    transition: transform 0.5s ease-out;
   }
   nav ul {
     flex-direction: row;
@@ -177,6 +178,11 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: var(--bg-clr);
+}
+@media (min-width: 48.75em) {
+  body {
+    --bg-clr: --off-white;
+  }
 }
 
 .main-section {
@@ -371,4 +377,9 @@ main {
 
 .fw-xbold {
   font-weight: 800;
+}
+
+.nav-show {
+  transform: translateX(0);
+  transition: transform 0.5s ease-out;
 }/*# sourceMappingURL=style.css.map */

@@ -6,6 +6,10 @@ body {
     align-items: center;
     flex-direction: column;
     background-color: var(--bg-clr);
+
+    @include bp.breakpointMin(medium-screen) {
+        --bg-clr: --off-white;
+    }
 }
 
 // Section

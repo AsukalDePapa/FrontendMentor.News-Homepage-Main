@@ -58,3 +58,9 @@ main {
 .fw-xbold {
     font-weight: 800;
 }
+
+// nav
+.nav-show {
+    transform: translateX(0);
+    transition: transform .5s ease-out;
+}

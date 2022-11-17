@@ -52,8 +52,7 @@ header {
 }
 
 nav {
-    // change width animation later
-    display: none;
+    transform: translateX(100%);
     position: absolute;
     right: 0;
     top: 0;
@@ -95,10 +94,11 @@ nav {
     }
 
     @include bp.breakpointMin(medium-screen) {
-        display: block;
+        transform: translateX(0);
         position: unset;
         height: unset;
         width: unset;
+        transition: transform .5s ease-out;
 
         ul {
             flex-direction: row;

@@ -11,10 +11,10 @@ const nav = document.querySelector('nav');
 
 menu.addEventListener('click', () => {
     root.style.setProperty('--bg-clr', grayishBlue);
-    nav.style.display = 'block';
+    nav.classList.add('nav-show');
 })
 
 closeMenu.addEventListener('click', () => {
     root.style.setProperty('--bg-clr', whitesmoke);
-    nav.style.display = 'none';
+    nav.classList.remove('nav-show');
 })

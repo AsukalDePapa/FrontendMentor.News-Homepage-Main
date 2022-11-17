@@ -1,0 +1,60 @@
+@use '../utils/breakpoints' as bp;
+@use '../utils/functions' as f;
+
+.main-section {
+    display: grid;
+    gap: f.rem(64);
+    grid-template-areas: 
+        'main'
+        'aside'
+        'section';
+    
+    @include bp.breakpointMin(large-screen) {
+        grid-template-columns: 65% 33%;
+        gap: 2%;
+        grid-template-areas: 
+            'main aside'
+            'section section';
+
+        section {
+            grid-column: span 2;
+        }
+    }
+}
+
+main {
+    display: grid;
+    gap: f.rem(32);
+    grid-template-areas: 
+        'hero-img'
+        'grid-h1'
+        'grid-description';
+
+    @include bp.breakpointMin(large-screen) {
+        grid-template-columns: 1fr 1fr;
+        gap: f.rem(0);
+        grid-template-areas: 
+            'hero-img hero-img'
+            'grid-h1 grid-description';
+    }
+}
+
+.hero-img {
+    grid-area: hero-img;
+}
+
+.grid-h1 {
+    grid-area: grid-h1;
+}
+
+.grid-description {
+    grid-area: grid-description;
+}
+
+.fw-bold {
+    font-weight: 700;
+}
+
+.fw-xbold {
+    font-weight: 800;
+}

@@ -1,0 +1,124 @@
+@use '../utils/breakpoints' as bp;
+@use '../utils/functions' as f;
+
+header {
+    // change max width later
+    width: min(90%, f.rem(600));
+    padding: f.rem(24) 0 f.rem(16);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+        cursor: pointer;
+    }
+
+    @include bp.breakpointMin(medium-screen) {
+        #menu, 
+        #close-menu {
+            display: none;
+        }
+    }
+
+    @include bp.breakpointMin(large-screen){
+        width: min(90%, f.rem(1150));
+        padding-top: f.rem(90);
+        margin-bottom: f.rem(40);
+    }
+}
+
+.logo {
+    img {
+        width: f.rem(38);
+        transition: width 1s ease;
+    }
+
+    @include bp.breakpointMin(medium-screen) {
+        img {
+            width: f.rem(44);
+            transition: width 1s ease;
+        }
+    }
+
+    @include bp.breakpointMin(large-screen) {
+        img {
+            width: f.rem(64);
+        }
+    }
+}
+
+.menu {
+    margin-top: 1px;
+}
+
+nav {
+    // change width animation later
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 70%;
+    height: 100vh;
+    background-color: var(--whitesmoke);
+
+    img {
+        position: inherit;
+        top: f.rem(22);
+        right: f.rem(30);
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: f.rem(24);
+        padding: f.rem(32);
+
+        li:first-child {
+            margin-top: f.rem(100);
+        }
+
+        li {
+            // margin-top: f.rem(32);
+            list-style: none;
+        }
+        
+        a {
+            color: var(--d-grayish-blue);
+            font-size: f.rem(20);
+
+            &:hover {
+                color: var(--soft-red);
+            }
+        }
+    }
+
+    @include bp.breakpointMin(medium-screen) {
+        display: block;
+        position: unset;
+        height: unset;
+        width: unset;
+
+        ul {
+            flex-direction: row;
+            gap: f.rem(24);
+            padding: 0;
+            transition: gap 1s ease-out;
+
+            li:first-child {
+                margin: 0;
+            }
+
+            a {
+                font-size: f.rem(16);
+            }
+
+            @include bp.breakpointMin(large-screen) {
+                gap: f.rem(48);
+            }
+        }
+    }
+
+   
+}
